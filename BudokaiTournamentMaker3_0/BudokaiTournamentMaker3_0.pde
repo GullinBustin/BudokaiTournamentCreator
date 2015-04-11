@@ -3,6 +3,7 @@ import controlP5.*;
 ControlP5 cp5; 
 MenuInicial Menu;
 Torneo torneo;
+ArrayList<String> nombrePersonajes = new ArrayList<String>();
 
 int w, h;
 
@@ -12,6 +13,7 @@ void setup() {
   h=height; 
   cp5 = new ControlP5(this);
   Menu = new MenuInicial(cp5);
+  readPersonajes();
 }
 
 void draw() {
@@ -20,5 +22,20 @@ void draw() {
     Menu.drawTitle();
   } else {
     background(255);
+  }
+}
+
+
+void readPersonajes() {
+  String line;
+  BufferedReader reader = createReader("personajes.txt");
+
+  try {
+    while ( (line = reader.readLine ()) != null) {
+      nombrePersonajes.add(line);
+    }
+  } 
+  catch (IOException e) {
+    e.printStackTrace();
   }
 }
