@@ -6,9 +6,10 @@ class Torneo{
   
   private int pantalla;
   private int numGrupos;
+  private ArrayList<Personaje> reserva;
   private ArrayList<Grupo> grupos;
   private ArrayList<String> jugadores;
-  private ArrayList<String> listaPersonajes;
+  private ArrayList<String> listaPersonajes; 
   
   
   public Torneo(){
@@ -43,15 +44,18 @@ class Torneo{
         grupo.asignarPersonaje(personaje);
         k++;
       }
-   
-    
-    grupos.add(grupo);
+      grupos.add(grupo);
+    }
+    for(int i = 0; i < (this.jugadores).size(); i++){
+      Personaje personaje = new Personaje();
+      personaje.setNombrePersonaje(listaPersonajes.get(k+i));
+      reserva.add(personaje);
     }
   }
-  
 }
 
-public void listShuffle(ArrayList listaP){ //random shuffle of ListArrays
+//random shuffle of ListArrays
+public void listShuffle(ArrayList listaP){
   IntList numList = new IntList();
   ArrayList listaAux = new ArrayList ();
   
