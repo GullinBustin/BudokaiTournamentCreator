@@ -3,6 +3,7 @@ class Grupo{
   ArrayList<Personaje> personajes;
 
   public Grupo(){
+    personajes = new ArrayList<Personaje> ();
   }
   
   public void setTamano(int tamano){
@@ -10,5 +11,9 @@ class Grupo{
   }
   public int getTamano(){
     return tamano;
+  }
+  
+  public void asignarPersonaje(Personaje personaje){
+    (this.personajes).add(personaje);
   }
 }

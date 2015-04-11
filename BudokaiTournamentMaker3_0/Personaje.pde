@@ -5,6 +5,8 @@ class Personaje{
   private String nombrePersonaje;
   
   public Personaje(){
+    this.victorias = 0;
+    this.vidas = 0;
   }
   
   public void setVictorias(int victorias){
