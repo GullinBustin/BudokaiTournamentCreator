@@ -6,7 +6,9 @@ class Torneo{
   
   private int pantalla;
   private int numGrupos;
-  
+  private ArrayList<Grupo> grupos;
+  private ArrayList<Personaje> personajes;
+  private ArrayList<String> jugadores;
   
   
   public Torneo(){
@@ -25,8 +27,8 @@ class Torneo{
   public int getNumGrupos(){
     return numGrupos;
   }
-  
-  
-  
+  public void hacerSorteo(){
+    
+  }
   
 }
