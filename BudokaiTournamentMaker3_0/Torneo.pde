@@ -30,6 +30,26 @@ class Torneo{
     return numGrupos;
   }
   
+  public ArrayList<Personaje> getReserva(){
+    return reserva;
+  }
+  
+  public void setJugadores(ArrayList<String> jugadores){
+    this.jugadores = jugadores;
+  }
+  
+  public ArrayList<String> getJugadores(){
+    return jugadores;
+  }
+  
+  public void setListaPersonajes(ArrayList<String> listaPersonajes){
+    this.listaPersonajes = listaPersonajes;
+  }
+  
+  public ArrayList<String> getListaPersonajes(){
+    return listaPersonajes;
+  }
+  
   public void sorteo(){
     listaPersonajes = listShuffle(listaPersonajes);
     int k = 0;
