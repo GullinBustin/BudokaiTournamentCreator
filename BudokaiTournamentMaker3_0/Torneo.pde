@@ -31,10 +31,10 @@ class Torneo{
   }
   
   public void sorteo(){
-    listShuffle(listaPersonajes);
+    listaPersonajes = listShuffle(listaPersonajes);
     int k = 0;
     for(int i = 0; i < this.numGrupos; i++){
-      listShuffle(jugadores);
+      jugadores = listShuffle(jugadores);
       Grupo grupo = new Grupo();
       grupo.tamano = (this.jugadores).size();
       for(int j = 0; j < grupo.getTamano(); j++){
@@ -55,7 +55,7 @@ class Torneo{
 }
 
 //random shuffle of ListArrays
-public void listShuffle(ArrayList listaP){
+public ArrayList listShuffle(ArrayList listaP){
   IntList numList = new IntList();
   ArrayList listaAux = new ArrayList ();
   
@@ -66,5 +66,5 @@ public void listShuffle(ArrayList listaP){
   for(int i = 0; i < listaP.size(); i++){
     listaAux.add(listaP.get(numList.get(i)));
   }
-  listaP = listaAux;
+  return listaAux;
 }
