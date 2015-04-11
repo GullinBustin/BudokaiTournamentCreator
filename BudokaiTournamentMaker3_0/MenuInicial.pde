@@ -1,8 +1,8 @@
 class MenuInicial {
 
   private PImage fondo;
-  ControlP5 cp5;
-  Button btnNew, btnLoad;
+  private ControlP5 cp5;
+  private Button btnNew, btnLoad;
   private PFont font;
 
   MenuInicial(ControlP5 cp5) {

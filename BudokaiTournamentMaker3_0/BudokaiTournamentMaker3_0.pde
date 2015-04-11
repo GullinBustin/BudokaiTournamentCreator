@@ -2,6 +2,7 @@ import controlP5.*;
 
 ControlP5 cp5; 
 MenuInicial Menu;
+MenuJugador EscogerJugador;
 Torneo torneo;
 ArrayList<String> nombrePersonajes = new ArrayList<String>();
 
@@ -22,6 +23,14 @@ void draw() {
     Menu.drawTitle();
   } else {
     background(255);
+    switch( torneo.getPantalla() ) {
+    case Torneo.PANTALLA_INTRO_JUGADORES:
+        if(EscogerJugador == null){
+           EscogerJugador = new MenuJugador(cp5); 
+        }
+        
+      break;
+    }
   }
 }
 
