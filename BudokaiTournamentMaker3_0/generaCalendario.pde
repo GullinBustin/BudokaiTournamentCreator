@@ -1,22 +1,45 @@
-void generaCalendario(int nj){
+public ArrayList generaCalendario(int nj){
   ArrayList calendario = new ArrayList ();
   IntList numList = new IntList ();
   for(int i = 0; i < nj; i++){
     numList.append(i);
   }
-  for(int i = 0; i < nj-1; i++){
-    //cada iterador registra los combates de la jornada i-esima
-    for(int j = 0; j < nj/2; j++){
+  
+  if(nj%2 == 0){ //si hay un numero par de jugadores es facilito
+    for(int i = 0; i < nj-1; i++){
+      ArrayList jornada = new ArrayList ();
       
+      for(int j = 0; j < nj/2; j++){
+        Pair match = new Pair(numList.get(j),numList.get(nj-1-j));
+        jornada.add(match);
+      }
+      
+      calendario.add(jornada);
+      numList = pseudoShift(numList);
     }
   }
+  else{ //si hay un numero impar me toca las pelotas
+  numList.append(-1); //rival fantasma (equivalente a descansar)
+    for(int i = 0; i < nj; i++){
+      ArrayList jornada = new ArrayList ();
+      
+      for(int j = 0; j < (nj+1)/2; j++){
+        Pair match = new Pair(numList.get(j),numList.get(nj-j));
+        if(numList.get(j)!=-1 && numList.get(nj-j) != -1) jornada.add(match); 
+      }
+      
+      calendario.add(jornada);
+      numList = pseudoShift(numList);
+    }
+  }
+  return calendario;
 }
 
-class pair{
+class Pair{
   public int x;
   public int y;
   
-  public pair(int i, int j){
+  public Pair(int i, int j){
     x = i;
     y = j;    
   }
