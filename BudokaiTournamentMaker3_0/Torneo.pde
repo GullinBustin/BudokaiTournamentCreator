@@ -15,6 +15,9 @@ class Torneo{
   public Torneo(){
     this.pantalla=1;
     this.grupos = new ArrayList<Grupo> ();
+    this.jugadores = new ArrayList<String> ();
+    this.listaPersonajes = new ArrayList<String> ();
+    this.reserva = new ArrayList<Personaje> ();
   }
   
   public void setPantalla(int pantalla){
