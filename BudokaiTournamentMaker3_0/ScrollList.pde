@@ -23,6 +23,14 @@ class ScrollList{
    nombres.add(name); 
   }
   
+  public int getlength(){
+    return nombres.size(); 
+  }
+  
+  public ArrayList getList(){
+   return nombres; 
+  }
+  
   public void drawScrollList(){
     textFont(font);
     textAlign(CENTER, CENTER);
