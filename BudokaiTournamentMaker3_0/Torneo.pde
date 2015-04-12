@@ -80,6 +80,11 @@ class Torneo{
       reserva.add(listaPersonajes.get(k+i));
     }
   }
+  
+  public void actualizaJugador(int G, int J, int V){
+    this.grupos.get(G).personajes.get(J).sumarVictoria();
+    this.grupos.get(G).personajes.get(J).sumarVidas(V);
+  }
 }
 
 //random shuffle of ListArrays
