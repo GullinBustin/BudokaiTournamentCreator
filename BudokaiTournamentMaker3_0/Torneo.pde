@@ -6,18 +6,17 @@ class Torneo{
   
   private int pantalla;
   private int numGrupos;
-  private ArrayList<Personaje> reserva;
+  private ArrayList<String> reserva;
   private ArrayList<Grupo> grupos;
   private ArrayList<String> jugadores;
-  private ArrayList<String> listaPersonajes; 
-  
+  private ArrayList<String> listaPersonajes;
   
   public Torneo(){
     this.pantalla=1;
     this.grupos = new ArrayList<Grupo> ();
     this.jugadores = new ArrayList<String> ();
     this.listaPersonajes = new ArrayList<String> ();
-    this.reserva = new ArrayList<Personaje> ();
+    this.reserva = new ArrayList<String> ();
   }
   
   public void setPantalla(int pantalla){
@@ -33,7 +32,7 @@ class Torneo{
     return numGrupos;
   }
   
-  public ArrayList<Personaje> getReserva(){
+  public ArrayList<String> getReserva(){
     return reserva;
   }
   
@@ -53,6 +52,14 @@ class Torneo{
     return listaPersonajes;
   }
   
+  public ArrayList<Grupo> getGrupos(){
+    return grupos;
+  }
+  
+  public void setGrupos (ArrayList<Grupo> grupos){
+    this.grupos=grupos;
+  }
+  
   public void sorteo(){
     listaPersonajes = listShuffle(listaPersonajes);
     int k = 0;
@@ -70,9 +77,7 @@ class Torneo{
       grupos.add(grupo);
     }
     for(int i = 0; i < (this.jugadores).size(); i++){
-      Personaje personaje = new Personaje();
-      personaje.setNombrePersonaje(listaPersonajes.get(k+i));
-      reserva.add(personaje);
+      reserva.add(listaPersonajes.get(k+i));
     }
   }
 }
