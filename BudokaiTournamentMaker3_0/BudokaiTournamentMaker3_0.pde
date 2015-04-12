@@ -30,6 +30,8 @@ void draw() {
         }
         EscogerJugador.drawMenuJugador();
       break;
+    case Torneo.PANTALLA_SORTEO:
+      break;
     }
   }
 }

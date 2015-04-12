@@ -67,6 +67,13 @@ class MenuJugador {
    return int(rbGrupos.getValue()); 
   }
   
+  public void endMenuJugador(){
+    rbGrupos.setVisible(false);
+    txfNewPlayer.setVisible(false);
+    btnContinue.setVisible(false);
+
+  }
+  
 }
 
 public void NuevoJugador(String name) {
@@ -74,8 +81,9 @@ public void NuevoJugador(String name) {
 }
 
 public void Sorteo(){
-  print("Jugadores:");
-  println(EscogerJugador.getJugadores());
-  print("Grupos:");
-  println(EscogerJugador.getGrupos());
+  torneo.setJugadores(EscogerJugador.getJugadores());
+  torneo.setNumGrupos(EscogerJugador.getGrupos());
+  torneo.sorteo();
+  torneo.setPantalla(Torneo.PANTALLA_SORTEO);
+  EscogerJugador.endMenuJugador();
 }
