@@ -85,6 +85,14 @@ class Torneo{
     this.grupos.get(G).personajes.get(J).sumarVictoria();
     this.grupos.get(G).personajes.get(J).sumarVidas(V);
   }
+  
+  public String getNombreJugadorTorneo(int G, int J){
+    return this.grupos.get(G).personajes.get(J).getJugador();
+  }
+  public String getNombrePersonajeTorneo(int G, int J){
+    return this.grupos.get(G).personajes.get(J).getNombrePersonaje();
+  }
+  
 }
 
 //random shuffle of ListArrays
