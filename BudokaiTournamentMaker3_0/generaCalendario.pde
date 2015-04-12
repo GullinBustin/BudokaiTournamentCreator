@@ -33,7 +33,7 @@ public ArrayList generaCalendario(int nj){
     }
   }
   
-  //Veamos que el calendario se lee como toca -> funciona perfecto
+  //Ejemplo de como debe leerse el ListArray calendario
   /*for(int i = 0; i < calendario.size(); i++){
     println("JORNADA "+int(i+1));
     for(int j = 0; j < (calendario.get(i)).size(); j++){
@@ -54,7 +54,7 @@ class Pair{
   }
 }
 
-//shiftea el array para algoritmo de todos-contra-todos
+//shiftea el array dejando invariante el primer elemento
 public IntList pseudoShift (IntList numList){
   IntList listAux = new IntList ();
   listAux.append(numList.get(0));
