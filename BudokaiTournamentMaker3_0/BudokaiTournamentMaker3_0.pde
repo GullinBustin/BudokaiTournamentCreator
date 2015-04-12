@@ -18,7 +18,7 @@ void setup() {
 }
 
 void draw() {
-
+  
   if (torneo ==null) {
     Menu.drawTitle();
   } else {
@@ -28,7 +28,7 @@ void draw() {
         if(EscogerJugador == null){
            EscogerJugador = new MenuJugador(cp5); 
         }
-        
+        EscogerJugador.drawMenuJugador();
       break;
     }
   }

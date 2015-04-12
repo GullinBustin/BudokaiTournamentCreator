@@ -31,6 +31,7 @@ public void Nuevo() {
 
   torneo = new Torneo();
   Menu.endMenuInicial();
+  torneo.setListaPersonajes(nombrePersonajes);
 }
 
 public void Cargar() {
