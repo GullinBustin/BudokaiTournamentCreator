@@ -58,29 +58,27 @@ class MenuJugador {
   public void addPlayer(String name) {
     slJugadores.addName(name);
   }
-  
-  public ArrayList getJugadores(){
-   return slJugadores.getList(); 
+
+  public ArrayList getJugadores() {
+    return slJugadores.getList();
   }
-  
-  public int getGrupos(){
-   return int(rbGrupos.getValue()); 
+
+  public int getGrupos() {
+    return int(rbGrupos.getValue());
   }
-  
-  public void endMenuJugador(){
+
+  public void endMenuJugador() {
     rbGrupos.setVisible(false);
     txfNewPlayer.setVisible(false);
     btnContinue.setVisible(false);
-
   }
-  
 }
 
 public void NuevoJugador(String name) {
   EscogerJugador.addPlayer(name);
 }
 
-public void Sorteo(){
+public void Sorteo() {
   torneo.setJugadores(EscogerJugador.getJugadores());
   torneo.setNumGrupos(EscogerJugador.getGrupos());
   torneo.sorteo();
