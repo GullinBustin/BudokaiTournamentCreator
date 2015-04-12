@@ -33,9 +33,12 @@ void draw() {
       break;
     case Torneo.PANTALLA_SORTEO:
       if (PanelesSorteo == null) {
-        PanelesSorteo = new MostrarSorteo(torneo.grupos);
+        PanelesSorteo = new MostrarSorteo(torneo.getGrupos(), cp5);
       }
       PanelesSorteo.drawMostrarGrupos();
+      break;
+    case Torneo.PANTALLA_GRUPOS:
+      background(255);
       break;
     }
   }
