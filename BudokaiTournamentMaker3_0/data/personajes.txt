@@ -2,13 +2,13 @@ Son Goku
 Son Goku (Chico)
 Son Gohan (Chico)
 Son Gohan (Joven)
-Son Gohan (Adolescente)
+Son Gohan
 Gran Saiyaman
 Son Goten
 Vegeta
 Trunks
 Trunks (Chico)
-Piccolo
+Cor Petit
 Krilin
 Yamcha
 Ten Shin Han
@@ -22,17 +22,17 @@ Saibaman
 Ginyu
 Recoome
 Freezer
-Androide Numero 16
-Androide Numero 17
-Androide Numero 18
+A 16
+A 17
+A 18
 Dr. Gero
-Cell
+Celula
 Cell Jr.
 Majin Buu
 Super Buu
 Kid Buu
 Dabura
-Omega Shenron
+Super Yi Shin Long
 Cooler
 Broly
 Bardock
