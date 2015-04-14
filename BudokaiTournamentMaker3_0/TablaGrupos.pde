@@ -20,6 +20,8 @@ class TablaGrupos {
   }
 
   public void drawTabla() {
+    textSize(int(22*w/1200)); 
+    textAlign(CENTER, CENTER);
     
     for (int i=0; i<ya.length; i++) {
       ya[i]=false;
