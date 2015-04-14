@@ -5,6 +5,7 @@ MenuInicial Menu;
 MenuJugador EscogerJugador;
 MostrarSorteo PanelesSorteo;
 Torneo torneo;
+PeriodoGrupos Liga;
 ArrayList<String> nombrePersonajes = new ArrayList<String>();
 
 int w, h;
@@ -39,13 +40,17 @@ void draw() {
       break;
     case Torneo.PANTALLA_GRUPOS:
       background(255);
+      if (Liga == null) {
+        Liga = new PeriodoGrupos(torneo.getGrupos());
+      }
+      Liga.drawPeriodoGrupos();
       break;
     }
   }
 }
 
 void keyReleased() {
-  if (PanelesSorteo != null) {
+  if (PanelesSorteo != null && torneo.getPantalla() == Torneo.PANTALLA_SORTEO) {
     PanelesSorteo.Destapar();
   }
 }
