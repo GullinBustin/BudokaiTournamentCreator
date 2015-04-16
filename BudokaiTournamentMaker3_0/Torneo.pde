@@ -180,6 +180,10 @@ class Torneo{
     //Actualizar el objeto torneo
     actualizaJugador(G,ganador,vidas);
   }
+  
+  public Personaje getPersonaje(int G, int n){
+    return this.grupos.get(G).personajes.get(n);
+  }
 }
 
 //random shuffle of ListArrays
