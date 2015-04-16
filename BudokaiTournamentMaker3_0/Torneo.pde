@@ -109,7 +109,7 @@ class Torneo{
     else comb = 4;
     boolean[] usado = new boolean[comb];
     
-    for(int i = 0; i < grup.size(); i++){
+    for(int i = 0; i < grup.size(); i++){ //miramos cada grupo
       ArrayList<Personaje> previos = new ArrayList<Personaje> ();
       
       for(int k = 0; k < comb; k++){
@@ -119,16 +119,27 @@ class Torneo{
         //buscamos los comb primeros del grupo i
         Personaje ganador = new Personaje();
         int maxim = 0;
+        int ganador_final = 0;
         for(int j = 0; j < this.jugadores.size(); j++){
           if (!usado[j]){
-            usado[j] = true;
             int punt = grup.get(i).personajes.get(j).victorias*100+grup.get(i).personajes.get(j).vidas;
-            if (punt > maxim){
+            if (punt !=0 && punt > maxim){
+              ganador_final = j;
               maxim = punt;
               ganador = grup.get(i).personajes.get(j);
             }
+            else if (punt != 0 && punt == maxim){
+              //hay que mirar quien gano
+              Combate decididor = new Combate();
+              decididor = getCombate(i,ganador_final,j);
+              if(decididor.getGanador() == j){
+                ganador_final = j;
+                ganador = grup.get(i).personajes.get(j);
+              }
+            }
           }
         }
+        usado[ganador_final] = true;
         previos.add(ganador);
       }
       finalistas.add(previos);
