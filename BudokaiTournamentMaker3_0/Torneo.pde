@@ -18,6 +18,7 @@ class Torneo{
     this.jugadores = new ArrayList<String> ();
     this.listaPersonajes = new ArrayList<String> ();
     this.reserva = new ArrayList<String> ();
+    this.listaCombates = new ArrayList<Combate> ();
   }
   
   public void setPantalla(int pantalla){
