@@ -10,6 +10,7 @@ class Torneo{
   private ArrayList<Grupo> grupos;
   private ArrayList<String> jugadores;
   private ArrayList<String> listaPersonajes;
+  private ArrayList<Combate> listaCombates;
   
   public Torneo(){
     this.pantalla=1;
@@ -60,6 +61,13 @@ class Torneo{
     this.grupos=grupos;
   }
   
+  public void setListaCombates(ArrayList<Combate> listaCombates){
+    this.listaCombates=listaCombates;
+  }
+  public ArrayList<Combate> getListaCombates(){
+    return listaCombates;
+  }
+  
   public void sorteo(){
     listaPersonajes = listShuffle(listaPersonajes);
     int k = 0;
@@ -92,7 +100,15 @@ class Torneo{
   public String getNombrePersonajeTorneo(int G, int J){
     return this.grupos.get(G).personajes.get(J).getNombrePersonaje();
   }
-  
+  public Combate getCombate(int grupo, int pers1, int pers2){
+    Combate c = new Combate();
+    for(Combate aux:listaCombates){
+      if(aux.getGrupo()==grupo && ((aux.getMando1()==pers1 && aux.getMando2()==pers2)||(aux.getMando1()==pers1 && aux.getMando2()==pers1))){
+        c=aux;
+      }
+    }
+    return c;
+  }
 }
 
 //random shuffle of ListArrays
