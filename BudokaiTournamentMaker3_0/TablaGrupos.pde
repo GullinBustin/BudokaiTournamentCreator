@@ -45,7 +45,7 @@ class TablaGrupos {
     fill(100);
     rect(posx+2*sizex*4/10, posy+sizey, sizex/10, sizey);
     fill(0);
-    text("P", posx+2*sizex*4/10, posy+sizey, sizex/10, sizey);
+    text("G", posx+2*sizex*4/10, posy+sizey, sizex/10, sizey);
 
     fill(150);
     rect(posx+sizex*9/10, posy+sizey, sizex/10, sizey);
