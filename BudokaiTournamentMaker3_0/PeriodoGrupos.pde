@@ -6,8 +6,12 @@ class PeriodoGrupos{
   private int actualJornada;
   private int actualPartido;
   private TablaGrupos Tablas[];
+  private ControlP5 cp5;
+  private Button btnBatalla;
   
-  PeriodoGrupos(ArrayList<Grupo> grup){
+  PeriodoGrupos(ArrayList<Grupo> grup, ControlP5 cp5){
+    this.cp5 = cp5;
+    btnBatalla = cp5.addButton("Batalla").setPosition(w*8/10,h*8/10);
     calendario = generaCalendario(grup.get(0).getTamano());
     this.Grupos = grup;
     actualGrupo = 0;
@@ -31,4 +35,14 @@ class PeriodoGrupos{
    }
   }
   
+  public void EscenaCombate(){
+    Fight = new PantallaCombate(Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).jugador,Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).jugador,Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).nombrePersonaje,Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).nombrePersonaje, cp5);
+  }
+  
+}
+
+public void Batalla(){
+  Liga.EscenaCombate();
+  torneo.setPantalla(Torneo.PANTALLA_COMBATE);
+
 }
