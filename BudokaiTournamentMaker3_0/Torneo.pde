@@ -100,7 +100,7 @@ class Torneo{
   public String getNombrePersonajeTorneo(int G, int J){
     return this.grupos.get(G).personajes.get(J).getNombrePersonaje();
   }
-<<<<<<< HEAD
+//<<<<<<< HEAD
   
   public ArrayList<Personaje> getFaseFinalEliminatoria(ArrayList<Grupo> grup){
     ArrayList<ArrayList<Personaje>> finalistas = new ArrayList<ArrayList<Personaje>> ();
