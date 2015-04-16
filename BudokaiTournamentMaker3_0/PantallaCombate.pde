@@ -14,7 +14,6 @@ class PantallaCombate {
     Jugador2 = j2;
     Personaje1 = p1;
     Personaje2 = p2;
-    println("Imagenes Personajes/"+Personaje1+".jpg");
     ImP1 = loadImage("Imagenes Personajes/"+Personaje1+".jpg");
     ImP2 = loadImage("Imagenes Personajes/"+Personaje2+".jpg");
     sldVidas = cp5.addSlider("sldvalorVidas")
@@ -63,7 +62,7 @@ class PantallaCombate {
   }
   
   public void killCombate(){
-    sldVidas.setVisible( false);
+    sldVidas.setVisible(false);
     btnEndBatalla.setVisible(false);
   }
   
@@ -78,12 +77,9 @@ class PantallaCombate {
 }
 
 public void FinalBatalla(){
-  println("huha");
+
   Liga.setCombate(Fight.getGanador(), Fight.getVidas());
-  println("huha");
   torneo.setPantalla(Torneo.PANTALLA_GRUPOS);
-  println("huha");
   Fight.killCombate();
-  println("huha");
   
 }

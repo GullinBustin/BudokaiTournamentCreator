@@ -33,9 +33,9 @@ class PeriodoGrupos{
    textSize(int(22*w/1200));
    textAlign(LEFT, CENTER);
    for(int i=0; i<calendario.get(actualJornada).size();i++){
-     if(i==actualPartido) fill(255,0,0);
-     if(i<actualPartido) fill(0);
-     if(i>actualPartido) fill(0,0,255);
+     if(i==actualPartido && actualGrupo == mostrarGrupo) fill(255,0,0);
+     if((i<actualPartido && actualGrupo == mostrarGrupo ) || actualGrupo > mostrarGrupo) fill(0);
+     if((i>actualPartido && actualGrupo == mostrarGrupo )|| actualGrupo < mostrarGrupo) fill(0,0,255);
     text(Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).jugador+": "+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).nombrePersonaje + "  VS  " + Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).jugador+": "+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).nombrePersonaje,w*9/16,h/8+h*i/20);
    }
   }
@@ -46,6 +46,7 @@ class PeriodoGrupos{
   }
   
   public void setCombate(int ganador, int vidas){
+    btnBatalla.setVisible(true);
     int numW, numL;
     if(ganador == 1){
      numW = calendario.get(actualJornada).get(actualPartido).x;
@@ -54,7 +55,7 @@ class PeriodoGrupos{
      numW = calendario.get(actualJornada).get(actualPartido).y;
      numL = calendario.get(actualJornada).get(actualPartido).x;
     }
-    println(actualGrupo +"   "+ numW + "   " + numL + "   " + vidas);
+
     torneo.hazCombate(actualGrupo,numW,numL,vidas);
     actualPartido++;
     if(actualPartido >= calendario.get(actualJornada).size()){
@@ -68,6 +69,7 @@ class PeriodoGrupos{
       }
      }
     }
+    mostrarGrupo = actualGrupo;
   }
   
 }
