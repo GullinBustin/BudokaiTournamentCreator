@@ -178,7 +178,7 @@ class Torneo{
     this.listaCombates.add(combat);
     
     //Actualizar el objeto torneo
-    actualizaJugador(G,ganador,vidas);
+    this.actualizaJugador(G,ganador,vidas);
   }
   
   public Personaje getPersonaje(int G, int n){
