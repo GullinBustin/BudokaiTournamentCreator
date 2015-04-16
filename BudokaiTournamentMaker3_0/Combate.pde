@@ -7,6 +7,14 @@ class Combate{
   
   public Combate(){}
   
+  public Combate(int grupo, int mando1, int mando2, int ganador, int vidasDelGanador){
+    this.grupo=grupo;
+    this.mando1=mando1;
+    this.mando2=mando2;
+    this.ganador=ganador;
+    this.vidasDelGanador=vidasDelGanador;
+  }
+  
   public void setGrupo(int grupo){
     this.grupo=grupo;
   }
@@ -20,7 +28,7 @@ class Combate{
     return mando1;
   }
   public void setMando2(int mando2){
-    this.mando1=mando2;
+    this.mando2=mando2;
   }
   public int getMando2(){
     return mando1;
