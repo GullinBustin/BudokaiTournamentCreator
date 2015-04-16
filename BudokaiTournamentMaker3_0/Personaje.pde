@@ -3,6 +3,8 @@ class Personaje{
   private int vidas;
   private String jugador;
   private String nombrePersonaje;
+  public int enGrupo;
+  public int posicionFinal;
   
   public Personaje(){
     this.victorias = 0;
