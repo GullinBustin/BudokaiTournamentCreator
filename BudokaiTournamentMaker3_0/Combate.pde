@@ -20,7 +20,7 @@ class Combate{
     return mando1;
   }
   public void setMando2(int mando2){
-    this.mando1=mando2;
+    this.mando2=mando2;
   }
   public int getMando2(){
     return mando1;

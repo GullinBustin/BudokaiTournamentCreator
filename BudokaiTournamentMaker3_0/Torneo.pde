@@ -100,7 +100,6 @@ class Torneo{
   public String getNombrePersonajeTorneo(int G, int J){
     return this.grupos.get(G).personajes.get(J).getNombrePersonaje();
   }
-//<<<<<<< HEAD
   
   public ArrayList<Personaje> getFaseFinalEliminatoria(ArrayList<Grupo> grup){
     ArrayList<ArrayList<Personaje>> finalistas = new ArrayList<ArrayList<Personaje>> ();
@@ -160,6 +159,15 @@ class Torneo{
       }
     }
     return c;
+  }
+  
+  public void hazCombate(int G, int ganador, int perdedor, int vidas){
+    //Parametros de combate
+    Combate combat = new Combate(G,ganador,perdedor,ganador,vidas);
+    this.listaCombates.add(combat);
+    
+    //Actualizar el objeto torneo
+    actualizaJugador(G,ganador,vidas);
   }
 }
 
