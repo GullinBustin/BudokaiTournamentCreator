@@ -103,6 +103,7 @@ class Torneo{
   }
   
   public ArrayList<Personaje> getFaseFinalEliminatoria(){
+    ArrayList<Grupo> grup = new ArrayList<Grupo>(); 
     grup = this.grupos;
     ArrayList<ArrayList<Personaje>> finalistas = new ArrayList<ArrayList<Personaje>> ();
     ArrayList<Personaje> definitivo = new ArrayList<Personaje>();
