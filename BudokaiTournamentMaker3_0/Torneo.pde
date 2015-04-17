@@ -3,6 +3,8 @@ class Torneo{
   public static final int PANTALLA_SORTEO=2;
   public static final int PANTALLA_GRUPOS=3;
   public static final int PANTALLA_COMBATE=4;
+  public static final int PANTALLA_FASE_FINAL=5;
+  public static final int PANTALLA_COMBATE_FINAL=6;
   
   private int pantalla;
   private int numGrupos;
