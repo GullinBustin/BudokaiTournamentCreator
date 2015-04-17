@@ -102,7 +102,8 @@ class Torneo{
     return this.grupos.get(G).personajes.get(J).getNombrePersonaje();
   }
   
-  public ArrayList<Personaje> getFaseFinalEliminatoria(ArrayList<Grupo> grup){
+  public ArrayList<Personaje> getFaseFinalEliminatoria(){
+    grup = this.grupos;
     ArrayList<ArrayList<Personaje>> finalistas = new ArrayList<ArrayList<Personaje>> ();
     ArrayList<Personaje> definitivo = new ArrayList<Personaje>();
     int comb;
