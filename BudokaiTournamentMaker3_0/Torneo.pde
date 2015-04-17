@@ -112,12 +112,12 @@ class Torneo{
     int comb;
     if(this.jugadores.size()<=4) comb = 2;
     else comb = 4;
-    boolean[] usado = new boolean[comb];
+    boolean[] usado = new boolean[this.jugadores.size()];
     
     for(int i = 0; i < grup.size(); i++){ //miramos cada grupo
       ArrayList<Personaje> previos = new ArrayList<Personaje> ();
       
-      for(int k = 0; k < comb; k++){
+      for(int k = 0; k < this.jugadores.size(); k++){
         usado[k] = false;
       }
       for(int k = 0; k < comb; k++){
