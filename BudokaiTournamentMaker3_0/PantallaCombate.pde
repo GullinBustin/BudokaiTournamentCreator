@@ -4,10 +4,10 @@ class PantallaCombate {
   private String Personaje1, Personaje2;
   private PImage ImP1, ImP2;
   //private RadioButton rdWiner;
-  private Slider sldVidas;
+  public Slider sldVidas;
   private int sldvalorVidas;
   private int ganador=-1;
-  private Button btnEndBatalla;
+  public Button btnEndBatalla;
 
   PantallaCombate(String j1, String j2, String p1, String p2, ControlP5 cp5) {
     Jugador1 = j1;
@@ -62,6 +62,7 @@ class PantallaCombate {
   }
   
   public void killCombate(){
+    
     sldVidas.setVisible(false);
     btnEndBatalla.setVisible(false);
   }

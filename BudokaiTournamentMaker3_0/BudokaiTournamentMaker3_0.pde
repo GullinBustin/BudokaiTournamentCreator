@@ -42,12 +42,15 @@ void draw() {
     case Torneo.PANTALLA_GRUPOS:
       background(255);
       if (Liga == null) {
-        Liga = new PeriodoGrupos(torneo.getGrupos(),cp5);
+        Liga = new PeriodoGrupos(torneo.getGrupos(), cp5);
       }
       Liga.drawPeriodoGrupos();
       break;
     case Torneo.PANTALLA_COMBATE:
       Fight.drawCombate();
+      break;
+    case Torneo.PANTALLA_COMBATE+1:
+      background(255);
       break;
     }
   }
