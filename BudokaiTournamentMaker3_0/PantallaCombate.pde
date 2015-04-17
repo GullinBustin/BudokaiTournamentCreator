@@ -100,8 +100,9 @@ public void FinalBatalla() {
     torneo.setPantalla(Torneo.PANTALLA_GRUPOS);
   }
   if (Fight.FaseCombate == Torneo.PANTALLA_FASE_FINAL) {
-    FinalCombat.setCombate(Fight.getGanador());
     torneo.setPantalla(Torneo.PANTALLA_FASE_FINAL);
+    FinalCombat.setCombate(Fight.getGanador());
+
   }
   
   Fight.killCombate();

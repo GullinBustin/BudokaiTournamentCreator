@@ -57,6 +57,12 @@ void draw() {
       }
       FinalCombat.drawFaseFinal();
       break;
+    case Torneo.PANTALLA_COMBATE_FINAL:
+      background(255);
+      for(int i=0; i<FinalCombat.Winer.size() ; i++){
+       text(FinalCombat.Winer.get(i).jugador+": "+FinalCombat.Winer.get(i).nombrePersonaje, w/2,100+40*i);
+      }
+      break;
     }
   }
 }
