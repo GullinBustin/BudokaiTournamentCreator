@@ -7,9 +7,11 @@ class PantallaCombate {
   public Slider sldVidas;
   private int sldvalorVidas;
   private int ganador=-1;
-  public Button btnEndBatalla;
+  private Button btnEndBatalla;
+  private int FaseCombate;
 
-  PantallaCombate(String j1, String j2, String p1, String p2, ControlP5 cp5) {
+  PantallaCombate(String j1, String j2, String p1, String p2, ControlP5 cp5, int FC) {
+    FaseCombate = FC;
     Jugador1 = j1;
     Jugador2 = j2;
     Personaje1 = p1;
@@ -25,16 +27,32 @@ class PantallaCombate {
                 .setValueLabel("Vidas Ganador")
                   ;
     btnEndBatalla = cp5.addButton("FinalBatalla").setPosition(w*7/8, h*22/24);
+    if (FC == Torneo.PANTALLA_GRUPOS) {
+      sldVidas.setVisible(true);
+    }
+    if (FC == Torneo.PANTALLA_FASE_FINAL) {
+      sldVidas.setVisible(false);
+    }
   }
 
   void drawCombate() {
-    if(sldVidas.getValue() > 0 && ganador>0) {
-      sldvalorVidas = int(sldVidas.getValue());
-      btnEndBatalla.setVisible(true);
+    if (FaseCombate == Torneo.PANTALLA_GRUPOS) {
+      if (sldVidas.getValue() > 0 && ganador>0) {
+        sldvalorVidas = int(sldVidas.getValue());
+        btnEndBatalla.setVisible(true);
+      } else {
+        btnEndBatalla.setVisible(false);
+      }
     }
-    else{
-      btnEndBatalla.setVisible(false);
+    if (FaseCombate == Torneo.PANTALLA_FASE_FINAL) {
+      if (ganador>0) {
+        sldvalorVidas = int(sldVidas.getValue());
+        btnEndBatalla.setVisible(true);
+      } else {
+        btnEndBatalla.setVisible(false);
+      }
     }
+
     background(0);
     image(ImP1, 0, 0, w/2, h*2/3);
     image(ImP2, w/2, 0, w/2, h*2/3);
@@ -60,27 +78,31 @@ class PantallaCombate {
       }
     }
   }
-  
-  public void killCombate(){
-    
+
+  public void killCombate() {
+
     sldVidas.setVisible(false);
     btnEndBatalla.setVisible(false);
   }
-  
-  public int getGanador(){
-   return ganador; 
+
+  public int getGanador() {
+    return ganador;
   }
-  
-  public int getVidas(){
-   return sldvalorVidas; 
+
+  public int getVidas() {
+    return sldvalorVidas;
   }
-  
 }
 
-public void FinalBatalla(){
-
-  Liga.setCombate(Fight.getGanador(), Fight.getVidas());
-  torneo.setPantalla(Torneo.PANTALLA_GRUPOS);
-  Fight.killCombate();
+public void FinalBatalla() {
+  if (Fight.FaseCombate == Torneo.PANTALLA_GRUPOS) {
+    Liga.setCombate(Fight.getGanador(), Fight.getVidas());
+    torneo.setPantalla(Torneo.PANTALLA_GRUPOS);
+  }
+  if (Fight.FaseCombate == Torneo.PANTALLA_FASE_FINAL) {
+    FinalCombat.setCombate(Fight.getGanador());
+    torneo.setPantalla(Torneo.PANTALLA_FASE_FINAL);
+  }
   
+  Fight.killCombate();
 }

@@ -7,6 +7,7 @@ MostrarSorteo PanelesSorteo;
 Torneo torneo;
 PeriodoGrupos Liga;
 PantallaCombate Fight;
+FaseFinal FinalCombat;
 ArrayList<String> nombrePersonajes = new ArrayList<String>();
 
 int w, h;
@@ -49,8 +50,12 @@ void draw() {
     case Torneo.PANTALLA_COMBATE:
       Fight.drawCombate();
       break;
-    case Torneo.PANTALLA_COMBATE+1:
+    case Torneo.PANTALLA_FASE_FINAL:
       background(255);
+      if (FinalCombat == null) {
+        FinalCombat = new FaseFinal(torneo.getFaseFinalEliminatoria(), cp5);
+      }
+      FinalCombat.drawFaseFinal();
       break;
     }
   }

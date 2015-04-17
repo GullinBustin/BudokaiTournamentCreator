@@ -52,7 +52,7 @@ class PeriodoGrupos {
   }
 
   public void EscenaCombate() {
-    Fight = new PantallaCombate(Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).jugador, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).jugador, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).nombrePersonaje, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).nombrePersonaje, cp5);
+    Fight = new PantallaCombate(Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).jugador, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).jugador, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).x).nombrePersonaje, Grupos.get(actualGrupo).personajes.get(calendario.get(actualJornada).get(actualPartido).y).nombrePersonaje, cp5, torneo.getPantalla());
     btnBatalla.setVisible(false);
     btnGrupoMas.setVisible(false);
     btnGrupoMenos.setVisible(false);
@@ -120,7 +120,8 @@ public void Batalla() {
 
 public void FinalGrupos(){
   Liga.endGrupos();
-  torneo.setPantalla(Torneo.PANTALLA_COMBATE+1);
+  torneo.setPantalla(Torneo.PANTALLA_FASE_FINAL);
+  
 }
 
 public void GrupoMas() {
