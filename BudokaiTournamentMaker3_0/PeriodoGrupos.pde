@@ -40,13 +40,28 @@ class PeriodoGrupos {
     image(fondo, 0, 0, w, h);
     Tablas[mostrarGrupo].drawTabla();
     if (actualJornada != -1) {
-      textSize(int(22*w/1200));
-      textAlign(LEFT, CENTER);
+      
+      rect(w*17/32, h/8, w*12/27, h/15);
+      fill(255);
+      textSize(int(32*w/1200));
+      textAlign(CENTER, CENTER);
+      text("Jornada "+(actualJornada+1)+"/"+calendario.size(), w*17/32, h/8, w*12/27, h/15);
+      
       for (int i=0; i<calendario.get (actualJornada).size(); i++) {
+        fill(255);
+        rect(w*17/32, h/8+h*(i+1)/15, w*5/27, h/15);
+        rect(w*17/32+w*7/27, h/8+h*(i+1)/15, w*5/27, h/15);
         if (i==actualPartido && actualGrupo == mostrarGrupo) fill(255, 0, 0);
         if ((i<actualPartido && actualGrupo == mostrarGrupo ) || actualGrupo > mostrarGrupo) fill(0);
         if ((i>actualPartido && actualGrupo == mostrarGrupo )|| actualGrupo < mostrarGrupo) fill(0, 0, 255);
-        text(Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).jugador+": "+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).nombrePersonaje + "  VS  " + Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).jugador+": "+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).nombrePersonaje, w*9/16, h/8+h*i/20);
+        textAlign(CENTER, CENTER);
+        textSize(int(22*w/1200)); 
+        text(Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).jugador+'\n'+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).x).nombrePersonaje, w*17/32, h/8+h*(i+1)/15, w*5/27, h/15);
+        text(Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).jugador+'\n'+Grupos.get(mostrarGrupo).personajes.get(calendario.get(actualJornada).get(i).y).nombrePersonaje, w*17/32+w*7/27, h/8+h*(i+1)/15, w*5/27, h/15);
+        fill(0);
+        rect(w*17/32+w*5/27, h/8+h/15*(1+i), w*2/27, h/15);
+        fill(255);
+        text("VS", w*17/32, h/8+h/15*(1+i), w*12/27, h/15);
       }
     }
   }
@@ -56,14 +71,13 @@ class PeriodoGrupos {
     btnBatalla.setVisible(false);
     btnGrupoMas.setVisible(false);
     btnGrupoMenos.setVisible(false);
-
   }
 
   public void setCombate(int ganador, int vidas) {
     btnGrupoMas.setVisible(true);
     btnGrupoMenos.setVisible(true);
     btnBatalla.setVisible(true);
-    
+
     int numW, numL;
     if (ganador == 1) {
       numW = calendario.get(actualJornada).get(actualPartido).x;
@@ -104,13 +118,12 @@ class PeriodoGrupos {
       mostrarGrupo = Grupos.size()-1;
     }
   }
-  
-  public void endGrupos(){
-   btnGrupoMas.setVisible(false);
-   btnGrupoMenos.setVisible(false);
-   btnFinalGrupos.setVisible(false);
+
+  public void endGrupos() {
+    btnGrupoMas.setVisible(false);
+    btnGrupoMenos.setVisible(false);
+    btnFinalGrupos.setVisible(false);
   }
-  
 }
 
 public void Batalla() {
@@ -118,10 +131,9 @@ public void Batalla() {
   torneo.setPantalla(Torneo.PANTALLA_COMBATE);
 }
 
-public void FinalGrupos(){
+public void FinalGrupos() {
   Liga.endGrupos();
   torneo.setPantalla(Torneo.PANTALLA_FASE_FINAL);
-  
 }
 
 public void GrupoMas() {

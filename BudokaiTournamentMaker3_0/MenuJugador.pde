@@ -20,10 +20,10 @@ class MenuJugador {
     txfNewPlayer = cp5.addTextfield("NuevoJugador", w/4-w/8, h/12, w/4, h/14).setFont(font);
 
     rbGrupos = cp5.addRadioButton("Grupos")
-      .setPosition(w*6/8, 100)
-        .setSize(40, 40)
-          .setItemsPerRow(1)
-            .setSpacingRow(60)
+      .setPosition(w*11/16, h*8/26)
+        .setSize(h/15, h/15)
+          .setItemsPerRow(3)
+            .setSpacingColumn(w/16)
               .addItem("2", 2)
                 .addItem("4", 4)
                   .addItem("8", 8)
